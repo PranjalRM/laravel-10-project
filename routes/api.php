@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\RegsiterUserController;
+use App\Http\Controllers\Api\JobController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::patch('/jobs/{job}',[Jobcontroller::class, 'update']);
+Route::post('/registered', [RegsiterUserController::class, 'store']);
